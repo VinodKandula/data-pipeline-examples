@@ -7,7 +7,7 @@ Read a JSON stream using the Data Pipeline Library.
 2. Download the Data Pipeline jar at [North Concepts Inc.][1]
 3. Place the **NorthConcepts-DataPipeline-x.x.x.jar** under the */libs* folder.
 4. Place the license file under the */resources* folder.
-5. Execute **mvn clean** at the perent root directory.
+5. Execute **mvn clean** at the parent root directory.
 6. Change to the example root directory (e.g., *examples/read-a-json-stream*) and run **mvn compile**.
 6. Run **mvn exec:java**.
 
