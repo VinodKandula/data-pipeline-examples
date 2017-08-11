@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>examples/read-a-json-stream</module>
+		<module>examples/read-from-gmail</module>
 	</modules>
 
 	<dependencies>
@@ -36,6 +37,19 @@
 			<artifactId>antlrall</artifactId>
 			<version>2.7.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4</version>
+</dependency>
 
 	</dependencies>
 
@@ -66,7 +80,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
 
 		</plugins>
 	</build>
