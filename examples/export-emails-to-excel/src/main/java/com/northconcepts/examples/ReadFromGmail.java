@@ -33,11 +33,16 @@ import com.northconcepts.datapipeline.transform.SelectFields;
 import com.northconcepts.datapipeline.transform.TransformingReader;
 
 public class ReadFromGmail {
+	
+	public static void main(String[] args) throws Throwable {
+		ReadFromGmail gmailReader = new ReadFromGmail();
+		gmailReader.readLatest10Emails(); // change the method to try the other examples
+	}
 
     private static final String HOST = "imap.gmail.com";
     private static final String USER = "user@example.com";
     private static final String PASSWD = "password";
-	
+    	
     public static final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public void readLatest10Emails() throws Throwable {
@@ -154,9 +159,4 @@ public class ReadFromGmail {
         document.save(new File("scratch/data/output/trials-" + date + ".xlsx"));
     }
     
-    public static void main(String[] args) throws Throwable {
-    	ReadFromGmail gmailReader = new ReadFromGmail();
-    	
-    	gmailReader.readLatest10Emails(); // change the method to try the other examples
-    }
 }
