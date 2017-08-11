@@ -15,8 +15,6 @@ import javax.mail.search.AndTerm;
 import javax.mail.search.ReceivedDateTerm;
 import javax.mail.search.SubjectTerm;
 
-import org.junit.Test;
-
 import com.northconcepts.datapipeline.core.DataReader;
 import com.northconcepts.datapipeline.core.DataWriter;
 import com.northconcepts.datapipeline.core.LimitReader;
@@ -38,7 +36,6 @@ public class ReadFromGmail {
 	
 	public static void main(String[] args) throws Throwable {
 		ReadFromGmail gmailReader = new ReadFromGmail();
-		
 		gmailReader.readLatest10Emails(); // change the method to try the other examples
 	}
 
