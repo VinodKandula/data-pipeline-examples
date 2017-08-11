@@ -9,7 +9,7 @@
 
 	<modules>
 		<module>examples/read-a-json-stream</module>
-		<module>examples/read-from-gmail</module>
+		<module>examples/export-emails-to-excel</module>
 	</modules>
 
 	<dependencies>
@@ -44,12 +44,12 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-    <groupId>javax.mail</groupId>
-    <artifactId>mail</artifactId>
-    <version>1.4</version>
-</dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
 
 	</dependencies>
 

@@ -1,4 +1,4 @@
-# Read From Gmail
+# Export Emails to Excel
 
 How To Export Emails From Gmail To Excel With Data Pipeline.
 
@@ -6,11 +6,10 @@ How To Export Emails From Gmail To Excel With Data Pipeline.
 1. Clone the repo.
 2. Download the Data Pipeline jar at [North Concepts Inc.][1]
 3. Place the **NorthConcepts-DataPipeline-x.x.x.jar** under the */libs* folder.
-4. Place the license file under the */src/test/resources* folder.
+4. Place the license file under the */resources* folder.
 5. Execute **mvn clean** at the parent root directory.
-6. Change to the example root directory (e.g., *examples/read-from-gmail*).
-7. To run the individual methods, **mvn -Dtest=ReadFromGmail#<method name> test** (e.g., **mvn -Dtest=ReadFromGmail#readLatest10Emails test**).
-8. To run all the methods, **mvn -Dtest=ReadFromGmail#<method name> test**.
+6. Change to the example root directory (e.g., *examples/export-emails-to-excel*) and run **mvn compile**.
+7. Run **mvn exec:java**.
 9. Check out the [How To Export Emails From Gmail To Excel With Data Pipeline][2] blog for a more detailed explanation.
 
 [1]: https://northconcepts.com/pricing/ "Data Pipeline Download"

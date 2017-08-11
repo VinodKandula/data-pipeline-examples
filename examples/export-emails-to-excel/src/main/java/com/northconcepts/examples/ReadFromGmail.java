@@ -15,8 +15,6 @@ import javax.mail.search.AndTerm;
 import javax.mail.search.ReceivedDateTerm;
 import javax.mail.search.SubjectTerm;
 
-import org.junit.Test;
-
 import com.northconcepts.datapipeline.core.DataReader;
 import com.northconcepts.datapipeline.core.DataWriter;
 import com.northconcepts.datapipeline.core.LimitReader;
@@ -42,7 +40,6 @@ public class ReadFromGmail {
 	
     public static final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    @Test
     public void readLatest10Emails() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setDirection(EmailReadDirection.BACKWARD);
@@ -51,7 +48,6 @@ public class ReadFromGmail {
         Job.run(reader, writer);
     }
     
-    @Test
     public void readLatest10SentEmails() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setDirection(EmailReadDirection.BACKWARD)
@@ -61,7 +57,6 @@ public class ReadFromGmail {
         Job.run(reader, writer);
     }
     
-    @Test
     public void searchEmailsBySubject() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setSearchTerm(new SubjectTerm("Trial License"))
@@ -71,7 +66,6 @@ public class ReadFromGmail {
         Job.run(reader, writer);
     }
     
-    @Test
     public void searchEmailsByDateAndSubject() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setSearchTerm(new AndTerm(
@@ -85,7 +79,6 @@ public class ReadFromGmail {
         Job.run(reader, writer);
     }
     
-    @Test
     public void debugEmailReader() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setSearchTerm(new SubjectTerm("Trial License"))
@@ -96,7 +89,6 @@ public class ReadFromGmail {
         Job.run(reader, writer);
     }
 
-    @Test
     public void exportEmailsToExcel() throws Throwable {
         DataReader reader = new EmailReader(MailStore.IMAP_OVER_SSL, HOST, USER, PASSWD)
                 .setSearchTerm(new AndTerm(
@@ -123,7 +115,6 @@ public class ReadFromGmail {
         document.save(new File("scratch/data/output/trials-" + date + ".xlsx"));
     }
 
-    @Test
     public void dumpEmailsToFile() throws Throwable {
         System.setProperty("mail.mime.base64.ignoreerrors", "true");
         
@@ -143,8 +134,6 @@ public class ReadFromGmail {
         System.out.println(writer.getRecordCount() + " emails saved.");
     }
 
-    
-    @Test
     public void exportDumpedEmailsToExcel() throws Throwable {
         DataReader reader = new FileReader(new File("scratch/data/output/trials-2017-08-09-183137.bin"));
         
@@ -165,4 +154,9 @@ public class ReadFromGmail {
         document.save(new File("scratch/data/output/trials-" + date + ".xlsx"));
     }
     
+    public static void main(String[] args) throws Throwable {
+    	ReadFromGmail gmailReader = new ReadFromGmail();
+    	
+    	gmailReader.readLatest10Emails(); // change the method to try the other examples
+    }
 }
