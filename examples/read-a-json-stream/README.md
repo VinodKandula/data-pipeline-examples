@@ -9,7 +9,7 @@ Read a JSON stream using the Data Pipeline Library.
 4. Place the license file under the */resources* folder.
 5. Execute **mvn clean** at the parent root directory.
 6. Change to the example root directory (e.g., *examples/read-a-json-stream*) and run **mvn compile**.
-6. Run **mvn exec:java**.
+7. Run **mvn exec:java**.
 
 [1]: https://northconcepts.com/pricing/ "Data Pipeline Download"
 
